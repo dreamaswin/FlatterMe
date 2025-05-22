@@ -1,10 +1,8 @@
-
 import React, { useState } from "react";
 import { characters } from "../data/characters";
 import ComplimentCard from "@/components/ComplimentCard";
 import Confetti from "@/components/Confetti";
 import { useToast } from "@/hooks/use-toast";
-
 const Index = () => {
   const [activeCharacter, setActiveCharacter] = useState<typeof characters[0] | null>(null);
   const [compliment, setCompliment] = useState<string>("");
@@ -12,7 +10,6 @@ const Index = () => {
   const {
     toast
   } = useToast();
-  
   const generateRandomCompliment = () => {
     // Get random character
     const randomCharacter = characters[Math.floor(Math.random() * characters.length)];
@@ -27,9 +24,7 @@ const Index = () => {
     // Hide confetti after animation completes
     setTimeout(() => setShowConfetti(false), 3000);
   };
-  
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 bg-white relative overflow-hidden">
+  return <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 bg-white relative overflow-hidden">
       {/* Background icons with depth of field effect - visible even before selecting a character */}
       <div className="absolute inset-0 overflow-hidden z-0 opacity-[0.03] pointer-events-none">
         <div className="absolute top-[10%] left-[5%] text-6xl">🧪</div>
@@ -52,7 +47,7 @@ const Index = () => {
         {/* Main Content */}
         {!activeCharacter && <div className="text-center mb-12">
             <p className="text-gray-600 mb-8">Get a delightful compliment from your favourite TV characters with a burst of confetti!</p>
-            <button onClick={generateRandomCompliment} className="text-white px-6 py-3 rounded-full text-base font-medium transition-all bg-blue-700 hover:bg-blue-600">
+            <button onClick={generateRandomCompliment} className="text-white px-6 py-3 rounded-full text-base font-medium transition-all bg-slate-950 hover:bg-slate-800">
               Hit me with a compliment!
             </button>
           </div>}
@@ -70,8 +65,6 @@ const Index = () => {
 
       {/* Confetti animation */}
       {showConfetti && <Confetti colors={activeCharacter ? [activeCharacter.borderColor, activeCharacter.textColor, "#FFC700", "#000000"] : undefined} />}
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
