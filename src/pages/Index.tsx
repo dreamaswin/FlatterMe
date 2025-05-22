@@ -28,14 +28,14 @@ const Index = () => {
       <div className="relative w-full max-w-3xl mx-auto">
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-medium text-center mb-8">
-          <span className="block text-6xl font-bold text-center text-purple-800">🎬 ConfetTV </span>
+          <span className="block text-6xl font-bold text-center text-slate-950">🎬 ConfetTV </span>
           <span className="text-sm text-gray-500 block mt-2 font-normal md:text-base">TV’s nicest quotes. Your daily dose of dopamine!</span>
         </h1>
 
         {/* Main Content */}
         {!activeCharacter && <div className="text-center mb-12">
             <p className="text-gray-600 mb-8">Get a delightful compliment from your favourite TV characters with a burst of confetti!</p>
-            <button onClick={generateRandomCompliment} className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full text-base font-medium transition-all">
+            <button onClick={generateRandomCompliment} className="text-white px-6 py-3 rounded-full text-base font-medium transition-all bg-blue-700 hover:bg-blue-600">
               Hit me with a compliment!
             </button>
           </div>}
