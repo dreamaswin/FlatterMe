@@ -1,92 +1,60 @@
-
 import React, { useState } from "react";
 import { characters } from "../data/characters";
 import ComplimentCard from "@/components/ComplimentCard";
 import Confetti from "@/components/Confetti";
 import { useToast } from "@/hooks/use-toast";
-
 const Index = () => {
   const [activeCharacter, setActiveCharacter] = useState<typeof characters[0] | null>(null);
   const [compliment, setCompliment] = useState<string>("");
   const [showConfetti, setShowConfetti] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const generateRandomCompliment = () => {
     // Get random character
     const randomCharacter = characters[Math.floor(Math.random() * characters.length)];
-    
+
     // Get random compliment from that character
     const randomCompliment = randomCharacter.quotes[Math.floor(Math.random() * randomCharacter.quotes.length)];
-    
     setActiveCharacter(randomCharacter);
     setCompliment(randomCompliment);
-    
+
     // Show confetti effect
     setShowConfetti(true);
     // Hide confetti after animation completes
     setTimeout(() => setShowConfetti(false), 3000);
   };
-
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 bg-white">
+  return <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 bg-white">
       <div className="relative w-full max-w-3xl mx-auto">
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-medium text-center mb-8">
-          <span className="block">Compliment Confetti</span>
-          <span className="text-sm md:text-base text-gray-500 font-normal block mt-2">Pop Culture Edition</span>
+          <span className="block text-6xl font-bold text-center">ConfetTV</span>
+          <span className="text-sm text-gray-500 block mt-2 font-normal md:text-base">Pop Culture Edition</span>
         </h1>
 
         {/* Main Content */}
-        {!activeCharacter && (
-          <div className="text-center mb-12">
+        {!activeCharacter && <div className="text-center mb-12">
             <p className="text-gray-600 mb-8">
               Get a delightful compliment from your favorite TV character with a burst of confetti!
             </p>
-            <button
-              onClick={generateRandomCompliment}
-              className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full text-base font-medium transition-all"
-            >
+            <button onClick={generateRandomCompliment} className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full text-base font-medium transition-all">
               Hit me with a compliment!
             </button>
-          </div>
-        )}
+          </div>}
 
         {/* Compliment Card */}
-        {activeCharacter && compliment && (
-          <div className="mb-8 animate-fade-in">
-            <ComplimentCard 
-              character={activeCharacter} 
-              compliment={compliment} 
-            />
-          </div>
-        )}
+        {activeCharacter && compliment && <div className="mb-8 animate-fade-in">
+            <ComplimentCard character={activeCharacter} compliment={compliment} />
+          </div>}
 
         {/* Another one button */}
-        {activeCharacter && compliment && (
-          <div className="flex justify-center">
-            <button
-              onClick={generateRandomCompliment}
-              className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full transition-all"
-            >
-              Another one
-            </button>
-          </div>
-        )}
+        {activeCharacter && compliment && <div className="flex justify-center">
+            <button onClick={generateRandomCompliment} className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full transition-all">Another one ✨</button>
+          </div>}
       </div>
 
       {/* Confetti animation */}
-      {showConfetti && (
-        <Confetti 
-          colors={activeCharacter ? [
-            activeCharacter.borderColor,
-            activeCharacter.textColor,
-            "#FFC700",
-            "#000000"
-          ] : undefined}
-        />
-      )}
-    </div>
-  );
+      {showConfetti && <Confetti colors={activeCharacter ? [activeCharacter.borderColor, activeCharacter.textColor, "#FFC700", "#000000"] : undefined} />}
+    </div>;
 };
-
 export default Index;
