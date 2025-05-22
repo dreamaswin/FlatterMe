@@ -59,7 +59,7 @@ const Index = () => {
 
         {/* Another one button */}
         {activeCharacter && compliment && <div className="flex justify-center">
-            <button onClick={generateRandomCompliment} className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full transition-all">Another one ✨</button>
+            <button onClick={generateRandomCompliment} className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full transition-all">Give me more! ✨</button>
           </div>}
       </div>
 
