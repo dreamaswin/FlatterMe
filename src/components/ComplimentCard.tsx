@@ -26,12 +26,20 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
 
   return (
     <div
-      className={`bg-white rounded-2xl shadow-lg p-8 transition-all ${className} max-w-xl w-full mx-auto`}
+      className={`bg-white rounded-2xl shadow-lg p-8 transition-all ${className} max-w-xl w-full mx-auto relative overflow-hidden`}
       style={{
         borderLeft: `4px solid ${character.borderColor}`,
       }}
     >
-      <div className="flex items-start mb-6">
+      {/* Character-specific background icons with depth of field effect */}
+      <div className="absolute -right-4 -top-4 opacity-5 text-9xl rotate-12 z-0 pointer-events-none">
+        {character.emoji}
+      </div>
+      <div className="absolute -left-4 -bottom-4 opacity-5 text-9xl -rotate-12 z-0 pointer-events-none">
+        {character.emoji}
+      </div>
+
+      <div className="flex items-start mb-6 relative z-10">
         <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-gray-50 border border-gray-100 mr-4">
           {character.emoji}
         </div>
@@ -41,7 +49,7 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
         </div>
       </div>
 
-      <div className="relative mb-6">
+      <div className="relative mb-6 z-10">
         <div 
           className={`text-xl md:text-2xl font-medium text-gray-800 leading-relaxed`}
         >
@@ -51,7 +59,7 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
       
       <button
         onClick={copyToClipboard}
-        className="flex items-center gap-2 px-4 py-2 rounded-full bg-black hover:bg-gray-800 text-white text-sm transition-all"
+        className="flex items-center gap-2 px-4 py-2 rounded-full bg-black hover:bg-gray-800 text-white text-sm transition-all relative z-10"
       >
         <Copy size={14} />
         <span>Copy</span>
