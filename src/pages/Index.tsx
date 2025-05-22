@@ -40,8 +40,8 @@ const Index = () => {
       <div className="relative w-full max-w-3xl mx-auto z-10">
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-medium text-center mb-8">
-          <span className="block text-6xl font-bold text-center text-slate-950">🎬 ConfetTV </span>
-          <span className="text-sm text-gray-500 block mt-2 font-normal md:text-base">TV's nicest quotes. Your daily dose of dopamine!</span>
+          <span className="block font-bold text-center text-slate-950 text-7xl">🎬 ConfetTV </span>
+          <span className="text-sm text-gray-500 block mt-2 font-normal md:text-base">Your favorite characters. Their nicest words. Just for YOU!</span>
         </h1>
 
         {/* Main Content */}
