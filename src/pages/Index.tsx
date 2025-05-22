@@ -28,15 +28,13 @@ const Index = () => {
       <div className="relative w-full max-w-3xl mx-auto">
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-medium text-center mb-8">
-          <span className="block text-6xl font-bold text-center">ConfetTV</span>
-          <span className="text-sm text-gray-500 block mt-2 font-normal md:text-base">Pop Culture Edition</span>
+          <span className="block text-6xl font-bold text-center text-purple-800">🎬 ConfetTV </span>
+          <span className="text-sm text-gray-500 block mt-2 font-normal md:text-base">TV’s nicest quotes. Your daily dose of dopamine!</span>
         </h1>
 
         {/* Main Content */}
         {!activeCharacter && <div className="text-center mb-12">
-            <p className="text-gray-600 mb-8">
-              Get a delightful compliment from your favorite TV character with a burst of confetti!
-            </p>
+            <p className="text-gray-600 mb-8">Get a delightful compliment from your favourite TV characters with a burst of confetti!</p>
             <button onClick={generateRandomCompliment} className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full text-base font-medium transition-all">
               Hit me with a compliment!
             </button>
