@@ -24,7 +24,7 @@ const Index = () => {
     // Hide confetti after animation completes
     setTimeout(() => setShowConfetti(false), 3000);
   };
-  return <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 bg-white relative overflow-hidden">
+  return <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 relative overflow-hidden bg-neutral-100">
       {/* Background icons with depth of field effect - visible even before selecting a character */}
       <div className="absolute inset-0 overflow-hidden z-0 opacity-[0.03] pointer-events-none">
         <div className="absolute top-[10%] left-[5%] text-6xl">🧪</div>
