@@ -28,30 +28,32 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4">
-      {/* Background texture and gradient are applied in CSS */}
-      
-      {/* Main Content */}
+    <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 bg-white">
       <div className="relative w-full max-w-3xl mx-auto">
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
+        <h1 className="text-3xl md:text-4xl font-medium text-center mb-8">
           <span className="block">Compliment Confetti</span>
-          <span className="text-lg md:text-xl text-gray-600 font-normal block mt-2">Pop Culture Edition</span>
+          <span className="text-sm md:text-base text-gray-500 font-normal block mt-2">Pop Culture Edition</span>
         </h1>
 
-        {/* Main CTA Button */}
-        <div className="w-full flex justify-center mb-12">
-          <button
-            onClick={generateRandomCompliment}
-            className={`skeuomorphic-button py-4 px-8 text-xl bg-gradient-to-br from-purple-500 to-purple-700 ${activeCharacter ? 'mt-4' : ''}`}
-          >
-            {activeCharacter ? "Hit me again!" : "Hit me with a compliment!"}
-          </button>
-        </div>
+        {/* Main Content */}
+        {!activeCharacter && (
+          <div className="text-center mb-12">
+            <p className="text-gray-600 mb-8">
+              Get a delightful compliment from your favorite TV character with a burst of confetti!
+            </p>
+            <button
+              onClick={generateRandomCompliment}
+              className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full text-base font-medium transition-all"
+            >
+              Hit me with a compliment!
+            </button>
+          </div>
+        )}
 
         {/* Compliment Card */}
         {activeCharacter && compliment && (
-          <div className="mb-8">
+          <div className="mb-8 animate-fade-in">
             <ComplimentCard 
               character={activeCharacter} 
               compliment={compliment} 
@@ -64,9 +66,9 @@ const Index = () => {
           <div className="flex justify-center">
             <button
               onClick={generateRandomCompliment}
-              className="bg-white/70 hover:bg-white rounded-full px-6 py-2 text-purple-700 font-medium transition-colors"
+              className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full transition-all"
             >
-              Another one!
+              Another one
             </button>
           </div>
         )}
@@ -79,7 +81,7 @@ const Index = () => {
             activeCharacter.borderColor,
             activeCharacter.textColor,
             "#FFC700",
-            "#9B5DE5"
+            "#000000"
           ] : undefined}
         />
       )}

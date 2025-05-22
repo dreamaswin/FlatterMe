@@ -26,40 +26,36 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
 
   return (
     <div
-      className={`skeuomorphic-card animate-bounce-in ${character.bgColor} ${className} max-w-xl w-full mx-auto`}
+      className={`bg-white rounded-2xl shadow-lg p-8 transition-all ${className} max-w-xl w-full mx-auto`}
       style={{
-        borderWidth: "2px",
-        borderStyle: "solid",
-        borderColor: character.borderColor,
+        borderLeft: `4px solid ${character.borderColor}`,
       }}
     >
-      <div className="flex items-center justify-center mb-4">
-        <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-white">
+      <div className="flex items-start mb-6">
+        <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl bg-gray-50 border border-gray-100 mr-4">
           {character.emoji}
+        </div>
+        <div>
+          <h3 className="text-lg font-medium">{character.name}</h3>
+          <p className="text-sm text-gray-500">{character.show}</p>
         </div>
       </div>
 
-      <div className="relative mb-4">
-        {/* Quote bubble */}
+      <div className="relative mb-6">
         <div 
-          className={`relative text-xl md:text-2xl font-medium ${character.textColor} text-center mb-2 py-4 px-2`}
+          className={`text-xl md:text-2xl font-medium text-gray-800 leading-relaxed`}
         >
           "{compliment}"
         </div>
       </div>
-
-      <div className="flex flex-col items-center">
-        <p className="text-lg font-semibold">{character.name}</p>
-        <p className="text-sm text-gray-500 mb-4">{character.show}</p>
-        
-        <button
-          onClick={copyToClipboard}
-          className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 hover:bg-white text-gray-700 text-sm transition-all"
-        >
-          <Copy size={14} />
-          <span>Copy</span>
-        </button>
-      </div>
+      
+      <button
+        onClick={copyToClipboard}
+        className="flex items-center gap-2 px-4 py-2 rounded-full bg-black hover:bg-gray-800 text-white text-sm transition-all"
+      >
+        <Copy size={14} />
+        <span>Copy</span>
+      </button>
     </div>
   );
 };

@@ -65,7 +65,7 @@ export default {
 				}
 			},
 			fontFamily: {
-				'poppins': ['Poppins', 'sans-serif'],
+				'cereal': ['Cereal', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -105,10 +105,6 @@ export default {
 				'bounce-in': 'bounce-in 0.5s ease-out',
 				'float-in': 'float-in 0.4s ease-out',
 				'jelly-button': 'jelly-button 0.6s ease-out'
-			},
-			backgroundImage: {
-				'grain-texture': "url('/textures/paper-grain.png')",
-				'gradient-main': 'linear-gradient(135deg, #f8f4e9 0%, #9b5de5 100%)'
 			},
 		}
 	},
