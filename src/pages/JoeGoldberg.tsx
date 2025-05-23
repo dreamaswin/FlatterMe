@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Book, Coffee, Eye, MapPin, Mail, Typewriter } from "lucide-react";
+import { Book, Coffee, Eye, MapPin, Mail, Pencil } from "lucide-react";
 import Confetti from "@/components/Confetti";
 import { motion } from "framer-motion";
 
@@ -41,7 +41,14 @@ const JoeGoldberg = () => {
   };
 
   // Floating sticker icons with subtle animation
-  const FloatingIcon = ({ children, top, left, right, bottom, delay = 0 }) => (
+  const FloatingIcon = ({ 
+    children, 
+    top = undefined, 
+    left = undefined, 
+    right = undefined, 
+    bottom = undefined, 
+    delay = 0 
+  }) => (
     <motion.div
       className="absolute text-black bg-white p-3 rounded-full shadow-lg z-10"
       style={{ top, left, right, bottom }}
@@ -78,23 +85,23 @@ const JoeGoldberg = () => {
       />
 
       {/* Floating stickers */}
-      <FloatingIcon top="10%" left="5%" delay={0}>
+      <FloatingIcon top="10%" left="5%" right={undefined} bottom={undefined} delay={0}>
         <Book size={24} />
       </FloatingIcon>
-      <FloatingIcon top="15%" right="10%" delay={1}>
+      <FloatingIcon top="15%" right="10%" left={undefined} bottom={undefined} delay={1}>
         <Coffee size={24} />
       </FloatingIcon>
-      <FloatingIcon bottom="20%" left="8%" delay={2}>
+      <FloatingIcon bottom="20%" left="8%" top={undefined} right={undefined} delay={2}>
         <Eye size={24} />
       </FloatingIcon>
-      <FloatingIcon bottom="25%" right="6%" delay={3}>
+      <FloatingIcon bottom="25%" right="6%" top={undefined} left={undefined} delay={3}>
         <MapPin size={24} />
       </FloatingIcon>
-      <FloatingIcon top="70%" left="15%" delay={1.5}>
+      <FloatingIcon top="70%" left="15%" right={undefined} bottom={undefined} delay={1.5}>
         <Mail size={24} />
       </FloatingIcon>
-      <FloatingIcon top="60%" right="12%" delay={2.5}>
-        <Typewriter size={24} />
+      <FloatingIcon top="60%" right="12%" left={undefined} bottom={undefined} delay={2.5}>
+        <Pencil size={24} />
       </FloatingIcon>
 
       <div className="container max-w-3xl mx-auto px-4 pt-20 pb-12 relative z-10">
