@@ -3,6 +3,8 @@ import { characters } from "../data/characters";
 import ComplimentCard from "@/components/ComplimentCard";
 import Confetti from "@/components/Confetti";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
+
 const Index = () => {
   const [activeCharacter, setActiveCharacter] = useState<typeof characters[0] | null>(null);
   const [compliment, setCompliment] = useState<string>("");
@@ -10,6 +12,7 @@ const Index = () => {
   const {
     toast
   } = useToast();
+
   const generateRandomCompliment = () => {
     // Get random character
     const randomCharacter = characters[Math.floor(Math.random() * characters.length)];
@@ -24,6 +27,7 @@ const Index = () => {
     // Hide confetti after animation completes
     setTimeout(() => setShowConfetti(false), 3000);
   };
+
   return <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 relative overflow-hidden bg-neutral-100">
       {/* Background icons with depth of field effect - visible even before selecting a character */}
       <div className="absolute inset-0 overflow-hidden z-0 opacity-[0.03] pointer-events-none">
@@ -50,6 +54,11 @@ const Index = () => {
             <button onClick={generateRandomCompliment} className="text-white px-6 py-3 rounded-full text-base font-medium transition-all bg-slate-950 hover:bg-slate-800">
               Hit me with a compliment!
             </button>
+            <div className="mt-8">
+              <Link to="/joe" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                <span className="mr-1">🔍</span> Try Joe Goldberg's darker compliments
+              </Link>
+            </div>
           </div>}
 
         {/* Compliment Card */}
@@ -67,4 +76,5 @@ const Index = () => {
       {showConfetti && <Confetti colors={activeCharacter ? [activeCharacter.borderColor, activeCharacter.textColor, "#FFC700", "#000000"] : undefined} />}
     </div>;
 };
+
 export default Index;
