@@ -41,28 +41,22 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
 
   return (
     <div
-      className={`relative bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 transition-all duration-300 ${className} max-w-2xl w-full mx-auto border border-white/10 hover:shadow-purple-500/10`}
-      style={{
-        boxShadow: `0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)`
-      }}
+      className={`relative bg-white rounded-3xl shadow-lg p-8 transition-all duration-300 ${className} max-w-2xl w-full mx-auto border border-gray-100`}
     >
-      {/* Subtle glow effect */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-      
-      <div className="flex items-start mb-8 relative z-10">
-        <div className="w-14 h-14 rounded-full flex items-center justify-center text-2xl bg-gradient-to-br from-slate-100 to-slate-50 border border-slate-200/50 mr-4 shadow-sm">
+      <div className="flex items-start mb-8">
+        <div className="w-14 h-14 rounded-full flex items-center justify-center text-2xl bg-gray-100 mr-4">
           {character.emoji}
         </div>
         <div>
-          <h3 className="text-xl font-semibold text-slate-800 font-cereal" style={{ letterSpacing: '-1px' }}>
+          <h3 className="text-xl font-semibold text-gray-900 font-cereal" style={{ letterSpacing: '-1px' }}>
             {character.name}
           </h3>
-          <p className="text-sm text-slate-500 font-light tracking-wide">{character.show}</p>
+          <p className="text-sm text-gray-500 font-light tracking-wide">{character.show}</p>
         </div>
       </div>
 
-      <div className="relative mb-8 z-10">
-        <div className="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed font-cereal" style={{ letterSpacing: '-1px' }}>
+      <div className="mb-8">
+        <div className="text-xl md:text-2xl font-medium text-gray-900 leading-relaxed font-cereal" style={{ letterSpacing: '-1px' }}>
           "{compliment}"
         </div>
       </div>
@@ -70,7 +64,7 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
       <div className="relative">
         <button
           onClick={copyToClipboard}
-          className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 text-white text-sm transition-all duration-300 relative z-10 shadow-lg hover:shadow-xl hover:scale-105 transform"
+          className="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 hover:bg-gray-800 text-white text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
         >
           <Copy size={14} />
           <span>Copy</span>
