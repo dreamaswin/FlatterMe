@@ -97,24 +97,6 @@ export default {
 					'50%': { transform: 'scale(1.02)' },
 					'75%': { transform: 'scale(0.98)' },
 					'100%': { transform: 'scale(1)' }
-				},
-				'gradient-xy': {
-					'0%, 100%': {
-						transform: 'scale(1) rotate(0deg)',
-						opacity: '1'
-					},
-					'25%': {
-						transform: 'scale(1.1) rotate(90deg)',
-						opacity: '0.8'
-					},
-					'50%': {
-						transform: 'scale(1.2) rotate(180deg)',
-						opacity: '0.6'
-					},
-					'75%': {
-						transform: 'scale(1.1) rotate(270deg)',
-						opacity: '0.8'
-					}
 				}
 			},
 			animation: {
@@ -122,8 +104,7 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'bounce-in': 'bounce-in 0.5s ease-out',
 				'float-in': 'float-in 0.4s ease-out',
-				'jelly-button': 'jelly-button 0.6s ease-out',
-				'gradient-xy': 'gradient-xy 15s ease infinite'
+				'jelly-button': 'jelly-button 0.6s ease-out'
 			},
 		}
 	},
