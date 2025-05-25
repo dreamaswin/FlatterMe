@@ -32,8 +32,7 @@ const Index = () => {
           <span className="block font-bold text-gray-900 text-6xl md:text-8xl tracking-tight font-cereal" style={{
           letterSpacing: '-3px'
         }}>Have a nice Day!</span>
-          <span className="text-sm text-gray-600 block mt-4 font-light md:text-base tracking-wide">Your favorite characters. Their nicest words.
-Just for YOU!</span>
+          <span className="text-sm text-gray-600 block mt-4 font-light md:text-base tracking-wide">The warmest lines </span>
         </h1>
 
         {/* Main Content */}
