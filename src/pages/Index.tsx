@@ -4,7 +4,6 @@ import ComplimentCard from "@/components/ComplimentCard";
 import Confetti from "@/components/Confetti";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
-
 const Index = () => {
   const [activeCharacter, setActiveCharacter] = useState<typeof characters[0] | null>(null);
   const [compliment, setCompliment] = useState<string>("");
@@ -12,7 +11,6 @@ const Index = () => {
   const {
     toast
   } = useToast();
-
   const generateRandomCompliment = () => {
     // Get random character
     const randomCharacter = characters[Math.floor(Math.random() * characters.length)];
@@ -27,7 +25,6 @@ const Index = () => {
     // Hide confetti after animation completes
     setTimeout(() => setShowConfetti(false), 3000);
   };
-
   return <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 relative overflow-hidden bg-neutral-100">
       {/* Background icons with depth of field effect - visible even before selecting a character */}
       <div className="absolute inset-0 overflow-hidden z-0 opacity-[0.03] pointer-events-none">
@@ -44,7 +41,7 @@ const Index = () => {
       <div className="relative w-full max-w-3xl mx-auto z-10">
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-medium text-center mb-8">
-          <span className="block font-bold text-center text-slate-950 text-7xl">🎬 ConfetTV </span>
+          <span className="block font-bold text-center text-slate-950 text-7xl">Catch-phrased.</span>
           <span className="text-sm text-gray-500 block mt-2 font-normal md:text-base">Your favorite characters. Their nicest words. Just for YOU!</span>
         </h1>
 
@@ -76,5 +73,4 @@ const Index = () => {
       {showConfetti && <Confetti colors={activeCharacter ? [activeCharacter.borderColor, activeCharacter.textColor, "#FFC700", "#000000"] : undefined} />}
     </div>;
 };
-
 export default Index;
