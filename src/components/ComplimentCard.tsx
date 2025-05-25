@@ -39,7 +39,7 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
           }}>
               {character.name}
             </h3>
-            <p className="text-sm text-gray-500 font-light tracking-wide">{character.show}</p>
+            <p className="text-gray-500-font-normal text-sm font-normal">{character.show}</p>
           </div>
         </div>
 
