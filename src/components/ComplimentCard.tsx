@@ -46,7 +46,7 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
         <div className="mb-8">
           <div style={{
           letterSpacing: '-1px'
-        }} className="text-xl :text-2xl font-regular text-gray-900-relaxed font-cereal">
+        }} className="text-xl font-regular text-gray-900-relaxed font-cereal">
             "{compliment}"
           </div>
         </div>
