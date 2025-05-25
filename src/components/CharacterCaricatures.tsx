@@ -16,9 +16,9 @@ const CharacterCaricatures = () => {
             className="group relative p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            {/* Character icon/emoji */}
+            {/* Character emoji */}
             <div className="text-3xl mb-2 text-center opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-              {character.icon || "🎭"}
+              {character.emoji || "🎭"}
             </div>
             
             {/* Character name */}
