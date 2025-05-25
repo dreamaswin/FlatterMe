@@ -34,7 +34,7 @@ const Index = () => {
         }} className="block font-bold text-6xl tracking-tight font-cereal text-indigo-500 md:text-8xl">
             Catch-phrased.
           </span>
-          <span className="text-sm text-gray-600 block mt-4 font-light md:text-base tracking-wide">
+          <span className="text-sm block mt-4 text-zinc-500 font-normal md:text-lg">
             Your favorite characters. Their nicest words. Just for YOU!
           </span>
         </h1>
