@@ -29,9 +29,9 @@ const Index = () => {
       <div className="relative w-full max-w-4xl mx-auto z-10">
         {/* Title */}
         <h1 className="text-center mb-12">
-          <span className="block font-bold text-gray-900 text-6xl md:text-8xl tracking-tight font-cereal" style={{
+          <span style={{
           letterSpacing: '-3px'
-        }}>
+        }} className="block font-bold text-6xl tracking-tight font-cereal text-indigo-500 md:text-8xl">
             Catch-phrased.
           </span>
           <span className="text-sm text-gray-600 block mt-4 font-light md:text-base tracking-wide">
