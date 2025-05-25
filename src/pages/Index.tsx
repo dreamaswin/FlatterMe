@@ -4,7 +4,6 @@ import ComplimentCard from "@/components/ComplimentCard";
 import Confetti from "@/components/Confetti";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
-
 const Index = () => {
   const [activeCharacter, setActiveCharacter] = useState<typeof characters[0] | null>(null);
   const [compliment, setCompliment] = useState<string>("");
@@ -26,8 +25,7 @@ const Index = () => {
     // Hide confetti after animation completes
     setTimeout(() => setShowConfetti(false), 3000);
   };
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 relative overflow-hidden bg-[#fcfdfd]">
+  return <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 relative overflow-hidden bg-[#fcfdfd]">
       <div className="relative w-full max-w-4xl mx-auto z-10">
         {/* Title */}
         <h1 className="text-center mb-12">
@@ -65,14 +63,9 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
-        <p className="text-sm text-gray-500 font-light">
+        <p className="text-sm text-gray-500 font-medium">
           Built with{" "}
-          <a 
-            href="https://lovable.dev" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-gray-700 hover:text-gray-900 underline transition-colors"
-          >
+          <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900 underline transition-colors">
             Lovable
           </a>
           {" "}by Surya
@@ -81,8 +74,6 @@ const Index = () => {
 
       {/* Confetti animation */}
       {showConfetti && <Confetti colors={activeCharacter ? [activeCharacter.borderColor, activeCharacter.textColor, "#8B5CF6", "#3B82F6"] : undefined} />}
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
