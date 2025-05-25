@@ -65,7 +65,7 @@ export default {
 				}
 			},
 			fontFamily: {
-				'cereal': ['Cereal', 'sans-serif'],
+				'cereal': ['Cereal', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
