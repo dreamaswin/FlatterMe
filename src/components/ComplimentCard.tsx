@@ -2,20 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Copy } from "lucide-react";
 import { Character } from "../data/characters";
 import CopyToast from "./CopyToast";
-
 interface ComplimentCardProps {
   character: Character;
   compliment: string;
   className?: string;
 }
-
 const ComplimentCard: React.FC<ComplimentCardProps> = ({
   character,
   compliment,
   className = ""
 }) => {
   const [showToast, setShowToast] = useState(false);
-
   const copyToClipboard = () => {
     navigator.clipboard.writeText(`${compliment} - ${character.name} (${character.show})`);
     setShowToast(true);
@@ -30,9 +27,7 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
       return () => clearTimeout(timer);
     }
   }, [showToast]);
-
-  return (
-    <>
+  return <>
       <div className={`relative bg-white rounded-3xl shadow-lg p-8 transition-all duration-300 ${className} max-w-2xl w-full mx-auto border border-gray-100`}>
         <div className="flex items-start mb-8">
           <div className="w-14 h-14 rounded-full flex items-center justify-center text-2xl bg-gray-100 mr-4">
@@ -49,9 +44,9 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
         </div>
 
         <div className="mb-8">
-          <div className="text-xl md:text-2xl font-medium text-gray-900 leading-relaxed font-cereal" style={{
+          <div style={{
           letterSpacing: '-1px'
-        }}>
+        }} className="text-xl md:text-2xl font-regular text-gray-900 leading-relaxed font-cereal">
             "{compliment}"
           </div>
         </div>
@@ -65,8 +60,6 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
       </div>
 
       <CopyToast isVisible={showToast} onClose={() => setShowToast(false)} />
-    </>
-  );
+    </>;
 };
-
 export default ComplimentCard;
