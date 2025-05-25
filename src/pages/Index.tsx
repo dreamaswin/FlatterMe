@@ -31,12 +31,11 @@ const Index = () => {
         <h1 className="text-center mb-12">
           <span style={{
           letterSpacing: '-3px'
-        }} className="block font-bold text-6xl tracking-tight font-cereal text-indigo-500 md:text-8xl">
+        }} className="block font-bold tracking-tight font-cereal text-indigo-500 md:text-8xl text-5xl">
             Catch-phrased.
           </span>
-          <span className="text-sm block mt-4 text-zinc-500 font-normal md:text-lg">
-            Your favorite characters. Their nicest words. Just for YOU!
-          </span>
+          <span className="block mt-4 text-zinc-500 font-normal md:text-lg text-sm">Your favorite characters. Their nicest words.
+Just for YOU!</span>
         </h1>
 
         {/* Main Content */}
