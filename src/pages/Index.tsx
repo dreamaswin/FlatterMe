@@ -39,7 +39,7 @@ const Index = () => {
         {!activeCharacter && <div className="text-center mb-12">
             
             <button onClick={generateRandomCompliment} className="group relative text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl hover:scale-105 transform">
-              <span className="relative z-10">Hit me with a compliment!</span>
+              <span className="relative z-10">Boost me up</span>
             </button>
             
           </div>}
