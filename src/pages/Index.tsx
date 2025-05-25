@@ -1,24 +1,22 @@
-
 import React, { useState } from "react";
 import { characters } from "../data/characters";
 import ComplimentCard from "@/components/ComplimentCard";
 import Confetti from "@/components/Confetti";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
-
 const Index = () => {
   const [activeCharacter, setActiveCharacter] = useState<typeof characters[0] | null>(null);
   const [compliment, setCompliment] = useState<string>("");
   const [showConfetti, setShowConfetti] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const generateRandomCompliment = () => {
     // Get random character
     const randomCharacter = characters[Math.floor(Math.random() * characters.length)];
 
     // Get random compliment from that character
     const randomCompliment = randomCharacter.quotes[Math.floor(Math.random() * randomCharacter.quotes.length)];
-    
     setActiveCharacter(randomCharacter);
     setCompliment(randomCompliment);
 
@@ -27,13 +25,13 @@ const Index = () => {
     // Hide confetti after animation completes
     setTimeout(() => setShowConfetti(false), 3000);
   };
-
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 relative overflow-hidden bg-white">
+  return <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4 relative overflow-hidden bg-[#fcfdfd]">
       <div className="relative w-full max-w-4xl mx-auto z-10">
         {/* Title */}
         <h1 className="text-center mb-12">
-          <span className="block font-bold text-gray-900 text-6xl md:text-8xl tracking-tight font-cereal" style={{ letterSpacing: '-3px' }}>
+          <span className="block font-bold text-gray-900 text-6xl md:text-8xl tracking-tight font-cereal" style={{
+          letterSpacing: '-3px'
+        }}>
             Catch-phrased.
           </span>
           <span className="text-sm text-gray-600 block mt-4 font-light md:text-base tracking-wide">
@@ -42,54 +40,29 @@ const Index = () => {
         </h1>
 
         {/* Main Content */}
-        {!activeCharacter && (
-          <div className="text-center mb-12">
-            <p className="text-gray-700 mb-12 text-lg font-light">
-              Get a delightful compliment from your favourite TV characters with a burst of confetti!
-            </p>
-            <button 
-              onClick={generateRandomCompliment} 
-              className="group relative text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl hover:scale-105 transform"
-            >
+        {!activeCharacter && <div className="text-center mb-12">
+            
+            <button onClick={generateRandomCompliment} className="group relative text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl hover:scale-105 transform">
               <span className="relative z-10">Hit me with a compliment!</span>
             </button>
-            <div className="mt-12">
-              <Link 
-                to="/joe" 
-                className="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 transition-colors duration-300"
-              >
-                <span className="mr-2">🔍</span> Try Joe Goldberg's darker compliments
-              </Link>
-            </div>
-          </div>
-        )}
+            
+          </div>}
 
         {/* Compliment Card */}
-        {activeCharacter && compliment && (
-          <div className="mb-8 animate-fade-in">
+        {activeCharacter && compliment && <div className="mb-8 animate-fade-in">
             <ComplimentCard character={activeCharacter} compliment={compliment} />
-          </div>
-        )}
+          </div>}
 
         {/* Another one button */}
-        {activeCharacter && compliment && (
-          <div className="flex justify-center">
-            <button 
-              onClick={generateRandomCompliment} 
-              className="group relative bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
-            >
+        {activeCharacter && compliment && <div className="flex justify-center">
+            <button onClick={generateRandomCompliment} className="group relative bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform">
               <span className="relative z-10">Give me more! ✨</span>
             </button>
-          </div>
-        )}
+          </div>}
       </div>
 
       {/* Confetti animation */}
-      {showConfetti && (
-        <Confetti colors={activeCharacter ? [activeCharacter.borderColor, activeCharacter.textColor, "#8B5CF6", "#3B82F6"] : undefined} />
-      )}
-    </div>
-  );
+      {showConfetti && <Confetti colors={activeCharacter ? [activeCharacter.borderColor, activeCharacter.textColor, "#8B5CF6", "#3B82F6"] : undefined} />}
+    </div>;
 };
-
 export default Index;
