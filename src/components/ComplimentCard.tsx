@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { Copy } from "lucide-react";
 import { Character } from "../data/characters";
-import { toast } from "@/hooks/use-toast";
 
 interface ComplimentCardProps {
   character: Character;
@@ -20,12 +18,6 @@ const ComplimentCard: React.FC<ComplimentCardProps> = ({
   const copyToClipboard = () => {
     navigator.clipboard.writeText(`${compliment} - ${character.name} (${character.show})`);
     setShowCopyNudge(true);
-    
-    toast({
-      title: "Copied to clipboard",
-      description: "Share the compliment with your friends!",
-      duration: 2000,
-    });
   };
 
   // Hide copy nudge after 3 seconds
